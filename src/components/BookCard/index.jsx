@@ -15,6 +15,8 @@ const style = {
   p: 4,
 };
 
+
+//shows book details in card
 const BookCard = ({ name, img, bookData }) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -30,6 +32,7 @@ const BookCard = ({ name, img, bookData }) => {
           className="min-w-[180px] max-w-[180px] h-[270px]"
           alt="kitap"
           src={
+            //if image is not null, renders image, else renders img not found
             img
               ? img
               : "https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg"
@@ -39,6 +42,8 @@ const BookCard = ({ name, img, bookData }) => {
           Details
         </button>
       </div>
+
+      {/* material ui modal component */}
       <Modal
         open={open}
         onClose={handleClose}
