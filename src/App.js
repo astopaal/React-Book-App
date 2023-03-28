@@ -1,23 +1,15 @@
-import logo from './logo.svg';
+import {BookProvider} from './context/BookContext'
+import ShowBooks from './components/ShowBooks'
+import SearchInput from './components/SearchInput'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App mt-20 flex flex-col justify-center items-center">
+      <BookProvider>
+        <SearchInput />
+        <ShowBooks />
+      </BookProvider>
     </div>
   );
 }
